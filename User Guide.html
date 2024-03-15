@@ -1,0 +1,2199 @@
+<!doctype html>
+<html>
+    <head>
+        <title>User Guide</title>
+        <meta charset='utf-8'/>
+        <style>
+ .ͼ1.cm-focused {outline: 1px dotted #212121;}
+.ͼ1 {position: relative !important; box-sizing: border-box; display: flex !important; flex-direction: column;}
+.ͼ1 .cm-scroller {display: flex !important; align-items: flex-start !important; font-family: monospace; line-height: 1.4; height: 100%; overflow-x: auto; position: relative; z-index: 0;}
+.ͼ1 .cm-content[contenteditable=true] {-webkit-user-modify: read-write-plaintext-only;}
+.ͼ1 .cm-content {margin: 0; flex-grow: 2; flex-shrink: 0; display: block; white-space: pre; word-wrap: normal; box-sizing: border-box; padding: 4px 0; outline: none;}
+.ͼ1 .cm-lineWrapping {white-space: pre-wrap; white-space: break-spaces; word-break: break-word; overflow-wrap: anywhere; flex-shrink: 1;}
+.ͼ2 .cm-content {caret-color: black;}
+.ͼ3 .cm-content {caret-color: white;}
+.ͼ1 .cm-line {display: block; padding: 0 2px 0 6px;}
+.ͼ1 .cm-layer > * {position: absolute;}
+.ͼ1 .cm-layer {position: absolute; left: 0; top: 0; contain: size style;}
+.ͼ2 .cm-selectionBackground {background: #d9d9d9;}
+.ͼ3 .cm-selectionBackground {background: #222;}
+.ͼ2.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #d7d4f0;}
+.ͼ3.cm-focused > .cm-scroller > .cm-selectionLayer .cm-selectionBackground {background: #233;}
+.ͼ1 .cm-cursorLayer {pointer-events: none;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer {animation: steps(1) cm-blink 1.2s infinite;}
+@keyframes cm-blink {50% {opacity: 0;}}
+@keyframes cm-blink2 {50% {opacity: 0;}}
+.ͼ1 .cm-cursor, .ͼ1 .cm-dropCursor {border-left: 1.2px solid black; margin-left: -0.6px; pointer-events: none;}
+.ͼ1 .cm-cursor {display: none;}
+.ͼ3 .cm-cursor {border-left-color: #444;}
+.ͼ1 .cm-dropCursor {position: absolute;}
+.ͼ1.cm-focused > .cm-scroller > .cm-cursorLayer .cm-cursor {display: block;}
+.ͼ2 .cm-activeLine {background-color: #cceeff44;}
+.ͼ3 .cm-activeLine {background-color: #99eeff33;}
+.ͼ2 .cm-specialChar {color: red;}
+.ͼ3 .cm-specialChar {color: #f78;}
+.ͼ1 .cm-gutters {flex-shrink: 0; display: flex; height: 100%; box-sizing: border-box; left: 0; z-index: 200;}
+.ͼ2 .cm-gutters {background-color: #f5f5f5; color: #6c6c6c; border-right: 1px solid #ddd;}
+.ͼ3 .cm-gutters {background-color: #333338; color: #ccc;}
+.ͼ1 .cm-gutter {display: flex !important; flex-direction: column; flex-shrink: 0; box-sizing: border-box; min-height: 100%; overflow: hidden;}
+.ͼ1 .cm-gutterElement {box-sizing: border-box;}
+.ͼ1 .cm-lineNumbers .cm-gutterElement {padding: 0 3px 0 5px; min-width: 20px; text-align: right; white-space: nowrap;}
+.ͼ2 .cm-activeLineGutter {background-color: #e2f2ff;}
+.ͼ3 .cm-activeLineGutter {background-color: #222227;}
+.ͼ1 .cm-panels {box-sizing: border-box; position: sticky; left: 0; right: 0;}
+.ͼ2 .cm-panels {background-color: #f5f5f5; color: black;}
+.ͼ2 .cm-panels-top {border-bottom: 1px solid #ddd;}
+.ͼ2 .cm-panels-bottom {border-top: 1px solid #ddd;}
+.ͼ3 .cm-panels {background-color: #333338; color: white;}
+.ͼ1 .cm-tab {display: inline-block; overflow: hidden; vertical-align: bottom;}
+.ͼ1 .cm-widgetBuffer {vertical-align: text-top; height: 1em; width: 0; display: inline;}
+.ͼ1 .cm-placeholder {color: #888; display: inline-block; vertical-align: top;}
+.ͼ1 .cm-highlightSpace:before {content: attr(data-display); position: absolute; pointer-events: none; color: #888;}
+.ͼ1 .cm-highlightTab {background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="20"><path stroke="%23888" stroke-width="1" fill="none" d="M1 10H196L190 5M190 15L196 10M197 4L197 16"/></svg>'); background-size: auto 100%; background-position: right 90%; background-repeat: no-repeat;}
+.ͼ1 .cm-trailingSpace {background-color: #ff332255;}
+.ͼ1 .cm-button {vertical-align: middle; color: inherit; font-size: 70%; padding: .2em 1em; border-radius: 1px;}
+.ͼ2 .cm-button:active {background-image: linear-gradient(#b4b4b4, #d0d3d6);}
+.ͼ2 .cm-button {background-image: linear-gradient(#eff1f5, #d9d9df); border: 1px solid #888;}
+.ͼ3 .cm-button:active {background-image: linear-gradient(#111, #333);}
+.ͼ3 .cm-button {background-image: linear-gradient(#393939, #111); border: 1px solid #888;}
+.ͼ1 .cm-textfield {vertical-align: middle; color: inherit; font-size: 70%; border: 1px solid silver; padding: .2em .5em;}
+.ͼ2 .cm-textfield {background-color: white;}
+.ͼ3 .cm-textfield {border: 1px solid #555; background-color: inherit;}
+.ͼ1 .cm-foldPlaceholder {background-color: #eee; border: 1px solid #ddd; color: #888; border-radius: .2em; margin: 0 1px; padding: 0 1px; cursor: pointer;}
+.ͼ1 .cm-foldGutter span {padding: 0 1px; cursor: pointer;}
+ 
+.pandoc-plugin-error {
+    color: red;
+}
+ /* THIS FILE IS NOT EXPORTED WITH THE HTML FILE! */
+
+/* Flow list used on the settings page */
+.flow-list {
+    contain: inline-size;
+    gap: 0.2em;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    width: -webkit-fill-available;
+	background-color: var(--background-secondary);
+	border: 1px solid var(--divider-color);
+	border-radius: 5px;
+	padding: 6px;
+}
+
+.flow-item {
+    display: flex;
+	flex-direction: row;
+    border-radius: 100px;
+	border: 1px solid var(--divider-color);
+    font-size: 0.9em;
+    height: min-content;
+    width: max-content;
+    padding: 3px 8px 3px 8px;
+    margin: 0.1em 0em 0.1em 0.0em;
+    background-color: var(--background-primary);
+	align-items: center;
+}
+
+/* Progressbar used in the render progress */
+
+.html-render-progressbar::-webkit-progress-bar {
+    background-color: var(--background-secondary);
+    border-radius: 500px;
+}
+
+.html-render-progressbar::-webkit-progress-value {
+    background-color: currentColor;
+    border-radius: 500px;
+}
+
+
+/*#region Tree */
+
+.tree-container
+{
+	--checkbox-size: 1.2em;
+    --collapse-arrow-size: 0.5em;
+    --tree-horizontal-spacing: calc(var(--collapse-arrow-size) * 2);
+    --tree-vertical-spacing: 0.5em;
+    --sidebar-margin: 12px;
+
+	font-size: 14px;
+	font-family: var(--font-family);
+}
+
+input[type=checkbox].file-checkbox 
+{
+    position: absolute;
+    margin-left: calc(0px - var(--collapse-arrow-size) * 2 - 0.5em - var(--checkbox-size) - 0.5em);
+    z-index: 20;
+}
+
+.theme-dark .tree-item:has(.file-checkbox.checked).mod-tree-folder
+{
+	transition: border-radius 0.2s, background-color 0.2s;
+	background-color: rgba(var(--color-blue-rgb), 0.05);
+	border-radius: 3px var(--radius-l) var(--radius-l) 3px;
+}
+
+.tree-item:has(.file-checkbox).mod-tree-folder
+{
+	margin-top: 2px;
+	margin-bottom: 2px;
+}
+
+.tree-item:has(.file-checkbox.checked).mod-tree-folder.is-collapsed
+{
+	border-radius: 3px;
+}
+
+.tree-item-title *
+{
+	padding: 0;
+	margin: 0;
+	overflow: visible;
+}
+
+.theme-dark .tree-item:has(> .tree-item-contents > .tree-item-link > .file-checkbox:not(.checked)):has(.file-checkbox.checked).mod-tree-folder
+{
+	background-color: rgba(var(--color-pink-rgb), 0.1);
+}
+
+.theme-light .tree-item:has(.file-checkbox.checked).mod-tree-folder
+{
+	transition: border-radius 0.2s, background-color 0.2s;
+	background-color: rgba(var(--color-blue-rgb), 0.15);
+	border-radius: 3px var(--radius-l) var(--radius-l) 3px;
+}
+
+.theme-light .tree-item:has(> .tree-item-contents > .tree-item-link  > .file-checkbox:not(.checked)):has(.file-checkbox.checked).mod-tree-folder
+{
+	background-color: rgba(var(--color-pink-rgb), 0.15);
+}
+
+
+/* Base tree */
+.tree-container 
+{
+	/* padding-bottom: 12px; */
+	/* margin: 12px; */
+	/* height: 100%; */
+	/* position: relative; */
+	/* display: contents; */
+	position: relative;
+	height: 100%;
+	width: auto;
+	margin: var(--sidebar-margin);
+	margin-top: 3em;
+    margin-bottom: 0;
+}
+
+.tree-container .tree-header 
+{
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	position: absolute;
+	top: -3em;
+}
+
+.tree-container .tree-header .sidebar-section-header
+{
+    margin: 1em;
+    margin-left: 0;
+}
+
+.tree-container:has(.tree-scroll-area:empty) 
+{
+    display: none;
+}
+
+.tree-container .tree-scroll-area 
+{
+	width: 100%;
+	height: 100%;
+	max-height: 100%;
+	overflow-y: scroll;
+	padding: 1em;
+	padding-right: calc(1em + var(--sidebar-margin));
+	padding-bottom: 3em;
+	border-radius: var(--radius-m);
+}
+
+.tree-container .tree-item 
+{
+	transition: background-color 0.2s;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0;
+}
+
+.tree-container .tree-item-children
+{
+    padding: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+
+    border-left: none;
+    width: -webkit-fill-available;
+}
+
+.tree-container .tree-item.mod-active > .tree-item-contents > .tree-item-link
+{
+    color: var(--color-accent);
+}
+
+.tree-container .tree-item-contents {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    /* border-radius: 0.4em; */
+    color: var(--nav-item-color);
+    width: -webkit-fill-available;
+    margin-left: var(--tree-horizontal-spacing);
+}
+
+.tree-container .tree-item-contents:active 
+{
+    color: var(--nav-item-color-active);
+}
+
+.tree-container .tree-item-link 
+{
+	font-weight: bold;
+    width: -webkit-fill-available;
+    height: 100%;
+    transition: background-color 0.1s;
+    border-radius: var(--radius-s);
+    padding-left: calc(var(--tree-horizontal-spacing) + var(--checkbox-size) * 2 + 1px);
+    padding-bottom: calc(var(--tree-vertical-spacing) / 2);
+    padding-top: calc(var(--tree-vertical-spacing) / 2);
+    color: var(--nav-item-color);
+    text-decoration: none;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* .tree-container .tree-item-icon.collapse-icon {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border-radius: var(--radius-s);
+    transition: background-color 0.1s;
+    position: absolute;
+    height: 100%;
+	z-index: 10;
+} */
+
+.tree-container .tree-item-icon.collapse-icon {
+    margin-left: calc(0px - var(--collapse-arrow-size) * 2 - 0.5em);
+    position: absolute;
+}
+
+.tree-container .tree-item.mod-tree-folder > .tree-item-contents > .tree-item-icon.collapse-icon
+{
+    width: 100%;
+}
+
+.tree-container .collapse-icon > svg {
+    color: unset !important;
+}
+
+.tree-container .collapse-icon:hover 
+{
+    color: var(--nav-item-color-hover);
+}
+
+.tree-container .tree-item.is-collapsed > .tree-item-contents > .tree-item-link > .tree-item-icon.collapse-icon > svg
+{
+    transition: transform 0.1s ease-in-out;
+    transform: rotate(-90deg);
+}
+
+.tree-container .tree-item-link:hover 
+{
+    cursor: default;
+    /* color: var(--nav-item-color-hover); */
+    text-decoration: none;
+}
+
+/* Indentation guide */
+
+.tree-container > .tree-scroll-area > * .tree-item
+{
+    margin-left: calc(var(--tree-horizontal-spacing) + var(--collapse-arrow-size) / 2 + 1px);
+    border-left: var(--nav-indentation-guide-width) solid var(--nav-indentation-guide-color);
+}
+
+.tree-container .tree-scroll-area > * > * > .tree-item
+{
+    margin-left: calc(var(--collapse-arrow-size) / 2 + 1px);
+}
+
+.tree-container .tree-item.mod-active
+{
+    border-left: var(--nav-indentation-guide-width) solid var(--color-accent);
+}
+
+
+.tree-container .tree-item:hover:not(.mod-active):not(.mod-collapsible):not(:has(.tree-item:hover)) /* Hover */
+{
+    border-left: var(--nav-indentation-guide-width) solid var(--nav-item-color-hover);
+}
+
+.tree-container .tree-item:not(.mod-collapsible) > .tree-item-children > .tree-item,
+.tree-container > .tree-scroll-area > .tree-item,
+.tree-container:not(.mod-nav-indicator) .tree-item
+{
+    border-left: none !important;
+}
+
+.tree-container .tree-item:not(.mod-collapsible) > .tree-item-children > .tree-item > .tree-item-contents,
+.tree-container:not(.mod-nav-indicator) .tree-item .tree-item-contents,
+.tree-container > .tree-scroll-area > .tree-item > .tree-item-contents
+{
+    margin-left: 0 !important;
+}
+
+/* Special */
+
+.tree-container.outline-tree .tree-item[data-depth='1'] > .tree-item-contents > .tree-item-link
+{
+    font-weight: 900;
+    font-size: 1.1em;
+    margin-left: 0em;
+}
+
+
+
+/*#endregion */
+  .CtxtMenu_InfoClose {  top:.2em; right:.2em;}
+.CtxtMenu_InfoContent {  overflow:auto; text-align:left; font-size:80%;  padding:.4em .6em; border:1px inset; margin:1em 0px;  max-height:20em; max-width:30em; background-color:#EEEEEE;  white-space:normal;}
+.CtxtMenu_Info.CtxtMenu_MousePost {outline:none;}
+.CtxtMenu_Info {  position:fixed; left:50%; width:auto; text-align:center;  border:3px outset; padding:1em 2em; background-color:#DDDDDD;  color:black;  cursor:default; font-family:message-box; font-size:120%;  font-style:normal; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 15px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius:15px;               /* Safari and Chrome */  -moz-border-radius:15px;                  /* Firefox */  -khtml-border-radius:15px;                /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */  filter:progid:DXImageTransform.Microsoft.dropshadow(OffX=2, OffY=2, Color="gray", Positive="true"); /* IE */}
+ .CtxtMenu_MenuClose {  position:absolute;  cursor:pointer;  display:inline-block;  border:2px solid #AAA;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  font-family: "Courier New", Courier;  font-size:24px;  color:#F0F0F0}
+.CtxtMenu_MenuClose span {  display:block; background-color:#AAA; border:1.5px solid;  border-radius:18px;  -webkit-border-radius: 18px;             /* Safari and Chrome */  -moz-border-radius: 18px;                /* Firefox */  -khtml-border-radius: 18px;              /* Konqueror */  line-height:0;  padding:8px 0 6px     /* may need to be browser-specific */}
+.CtxtMenu_MenuClose:hover {  color:white!important;  border:2px solid #CCC!important}
+.CtxtMenu_MenuClose:hover span {  background-color:#CCC!important}
+.CtxtMenu_MenuClose:hover:focus {  outline:none}
+ .CtxtMenu_Menu {  position:absolute;  background-color:white;  color:black;  width:auto; padding:5px 0px;  border:1px solid #CCCCCC; margin:0; cursor:default;  font: menu; text-align:left; text-indent:0; text-transform:none;  line-height:normal; letter-spacing:normal; word-spacing:normal;  word-wrap:normal; white-space:nowrap; float:none; z-index:201;  border-radius: 5px;                     /* Opera 10.5 and IE9 */  -webkit-border-radius: 5px;             /* Safari and Chrome */  -moz-border-radius: 5px;                /* Firefox */  -khtml-border-radius: 5px;              /* Konqueror */  box-shadow:0px 10px 20px #808080;         /* Opera 10.5 and IE9 */  -webkit-box-shadow:0px 10px 20px #808080; /* Safari 3 & Chrome */  -moz-box-shadow:0px 10px 20px #808080;    /* Forefox 3.5 */  -khtml-box-shadow:0px 10px 20px #808080;  /* Konqueror */}
+.CtxtMenu_MenuItem {  padding: 1px 2em;  background:transparent;}
+.CtxtMenu_MenuArrow {  position:absolute; right:.5em; padding-top:.25em; color:#666666;  font-family: null; font-size: .75em}
+.CtxtMenu_MenuActive .CtxtMenu_MenuArrow {color:white}
+.CtxtMenu_MenuArrow.CtxtMenu_RTL {left:.5em; right:auto}
+.CtxtMenu_MenuCheck {  position:absolute; left:.7em;  font-family: null}
+.CtxtMenu_MenuCheck.CtxtMenu_RTL { right:.7em; left:auto }
+.CtxtMenu_MenuRadioCheck {  position:absolute; left: .7em;}
+.CtxtMenu_MenuRadioCheck.CtxtMenu_RTL {  right: .7em; left:auto}
+.CtxtMenu_MenuInputBox {  padding-left: 1em; right:.5em; color:#666666;  font-family: null;}
+.CtxtMenu_MenuInputBox.CtxtMenu_RTL {  left: .1em;}
+.CtxtMenu_MenuComboBox {  left:.1em; padding-bottom:.5em;}
+.CtxtMenu_MenuSlider {  left: .1em;}
+.CtxtMenu_SliderValue {  position:absolute; right:.1em; padding-top:.25em; color:#333333;  font-size: .75em}
+.CtxtMenu_SliderBar {  outline: none; background: #d3d3d3}
+.CtxtMenu_MenuLabel {  padding: 1px 2em 3px 1.33em;  font-style:italic}
+.CtxtMenu_MenuRule {  border-top: 1px solid #DDDDDD;  margin: 4px 3px;}
+.CtxtMenu_MenuDisabled {  color:GrayText}
+.CtxtMenu_MenuActive {  background-color: #606872;  color: white;}
+.CtxtMenu_MenuDisabled:focus {  background-color: #E8E8E8}
+.CtxtMenu_MenuLabel:focus {  background-color: #E8E8E8}
+.CtxtMenu_ContextMenu:focus {  outline:none}
+.CtxtMenu_ContextMenu .CtxtMenu_MenuItem:focus {  outline:none}
+.CtxtMenu_SelectionMenu {  position:relative; float:left;  border-bottom: none; -webkit-box-shadow:none; -webkit-border-radius:0px; }
+.CtxtMenu_SelectionItem {  padding-right: 1em;}
+.CtxtMenu_Selection {  right: 40%; width:50%; }
+.CtxtMenu_SelectionBox {  padding: 0em; max-height:20em; max-width: none;  background-color:#FFFFFF;}
+.CtxtMenu_SelectionDivider {  clear: both; border-top: 2px solid #000000;}
+.CtxtMenu_Menu .CtxtMenu_MenuClose {  top:-10px; left:-10px}
+ 
+mjx-container[jax="CHTML"] {
+  line-height: 0;
+}
+
+mjx-container [space="1"] {
+  margin-left: .111em;
+}
+
+mjx-container [space="2"] {
+  margin-left: .167em;
+}
+
+mjx-container [space="3"] {
+  margin-left: .222em;
+}
+
+mjx-container [space="4"] {
+  margin-left: .278em;
+}
+
+mjx-container [space="5"] {
+  margin-left: .333em;
+}
+
+mjx-container [rspace="1"] {
+  margin-right: .111em;
+}
+
+mjx-container [rspace="2"] {
+  margin-right: .167em;
+}
+
+mjx-container [rspace="3"] {
+  margin-right: .222em;
+}
+
+mjx-container [rspace="4"] {
+  margin-right: .278em;
+}
+
+mjx-container [rspace="5"] {
+  margin-right: .333em;
+}
+
+mjx-container [size="s"] {
+  font-size: 70.7%;
+}
+
+mjx-container [size="ss"] {
+  font-size: 50%;
+}
+
+mjx-container [size="Tn"] {
+  font-size: 60%;
+}
+
+mjx-container [size="sm"] {
+  font-size: 85%;
+}
+
+mjx-container [size="lg"] {
+  font-size: 120%;
+}
+
+mjx-container [size="Lg"] {
+  font-size: 144%;
+}
+
+mjx-container [size="LG"] {
+  font-size: 173%;
+}
+
+mjx-container [size="hg"] {
+  font-size: 207%;
+}
+
+mjx-container [size="HG"] {
+  font-size: 249%;
+}
+
+mjx-container [width="full"] {
+  width: 100%;
+}
+
+mjx-box {
+  display: inline-block;
+}
+
+mjx-block {
+  display: block;
+}
+
+mjx-itable {
+  display: inline-table;
+}
+
+mjx-row {
+  display: table-row;
+}
+
+mjx-row > * {
+  display: table-cell;
+}
+
+mjx-mtext {
+  display: inline-block;
+}
+
+mjx-mstyle {
+  display: inline-block;
+}
+
+mjx-merror {
+  display: inline-block;
+  color: red;
+  background-color: yellow;
+}
+
+mjx-mphantom {
+  visibility: hidden;
+}
+
+_::-webkit-full-page-media, _:future, :root mjx-container {
+  will-change: opacity;
+}
+
+mjx-assistive-mml {
+  position: absolute !important;
+  top: 0px;
+  left: 0px;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 1px 0px 0px 0px !important;
+  border: 0px !important;
+  display: block !important;
+  width: auto !important;
+  overflow: hidden !important;
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+mjx-assistive-mml[display="block"] {
+  width: 100% !important;
+}
+
+mjx-math {
+  display: inline-block;
+  text-align: left;
+  line-height: 0;
+  text-indent: 0;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 100%;
+  font-size-adjust: none;
+  letter-spacing: normal;
+  border-collapse: collapse;
+  word-wrap: normal;
+  word-spacing: normal;
+  white-space: nowrap;
+  direction: ltr;
+  padding: 1px 0;
+}
+
+mjx-container[jax="CHTML"][display="true"] {
+  display: block;
+  text-align: center;
+  margin: 1em 0;
+}
+
+mjx-container[jax="CHTML"][display="true"][width="full"] {
+  display: flex;
+}
+
+mjx-container[jax="CHTML"][display="true"] mjx-math {
+  padding: 0;
+}
+
+mjx-container[jax="CHTML"][justify="left"] {
+  text-align: left;
+}
+
+mjx-container[jax="CHTML"][justify="right"] {
+  text-align: right;
+}
+
+mjx-mi {
+  display: inline-block;
+  text-align: left;
+}
+
+mjx-c {
+  display: inline-block;
+}
+
+mjx-utext {
+  display: inline-block;
+  padding: .75em 0 .2em 0;
+}
+
+mjx-c::before {
+  display: block;
+  width: 0;
+}
+
+.MJX-TEX {
+  font-family: MJXZERO, MJXTEX;
+}
+
+.TEX-B {
+  font-family: MJXZERO, MJXTEX-B;
+}
+
+.TEX-I {
+  font-family: MJXZERO, MJXTEX-I;
+}
+
+.TEX-MI {
+  font-family: MJXZERO, MJXTEX-MI;
+}
+
+.TEX-BI {
+  font-family: MJXZERO, MJXTEX-BI;
+}
+
+.TEX-S1 {
+  font-family: MJXZERO, MJXTEX-S1;
+}
+
+.TEX-S2 {
+  font-family: MJXZERO, MJXTEX-S2;
+}
+
+.TEX-S3 {
+  font-family: MJXZERO, MJXTEX-S3;
+}
+
+.TEX-S4 {
+  font-family: MJXZERO, MJXTEX-S4;
+}
+
+.TEX-A {
+  font-family: MJXZERO, MJXTEX-A;
+}
+
+.TEX-C {
+  font-family: MJXZERO, MJXTEX-C;
+}
+
+.TEX-CB {
+  font-family: MJXZERO, MJXTEX-CB;
+}
+
+.TEX-FR {
+  font-family: MJXZERO, MJXTEX-FR;
+}
+
+.TEX-FRB {
+  font-family: MJXZERO, MJXTEX-FRB;
+}
+
+.TEX-SS {
+  font-family: MJXZERO, MJXTEX-SS;
+}
+
+.TEX-SSB {
+  font-family: MJXZERO, MJXTEX-SSB;
+}
+
+.TEX-SSI {
+  font-family: MJXZERO, MJXTEX-SSI;
+}
+
+.TEX-SC {
+  font-family: MJXZERO, MJXTEX-SC;
+}
+
+.TEX-T {
+  font-family: MJXZERO, MJXTEX-T;
+}
+
+.TEX-V {
+  font-family: MJXZERO, MJXTEX-V;
+}
+
+.TEX-VB {
+  font-family: MJXZERO, MJXTEX-VB;
+}
+
+mjx-stretchy-v mjx-c, mjx-stretchy-h mjx-c {
+  font-family: MJXZERO, MJXTEX-S1, MJXTEX-S4, MJXTEX, MJXTEX-A ! important;
+}
+
+@font-face /* 0 */ {
+  font-family: MJXZERO;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Zero.woff") format("woff");
+}
+
+@font-face /* 1 */ {
+  font-family: MJXTEX;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Regular.woff") format("woff");
+}
+
+@font-face /* 2 */ {
+  font-family: MJXTEX-B;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Bold.woff") format("woff");
+}
+
+@font-face /* 3 */ {
+  font-family: MJXTEX-I;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-Italic.woff") format("woff");
+}
+
+@font-face /* 4 */ {
+  font-family: MJXTEX-MI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Main-Italic.woff") format("woff");
+}
+
+@font-face /* 5 */ {
+  font-family: MJXTEX-BI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Math-BoldItalic.woff") format("woff");
+}
+
+@font-face /* 6 */ {
+  font-family: MJXTEX-S1;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size1-Regular.woff") format("woff");
+}
+
+@font-face /* 7 */ {
+  font-family: MJXTEX-S2;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size2-Regular.woff") format("woff");
+}
+
+@font-face /* 8 */ {
+  font-family: MJXTEX-S3;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size3-Regular.woff") format("woff");
+}
+
+@font-face /* 9 */ {
+  font-family: MJXTEX-S4;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Size4-Regular.woff") format("woff");
+}
+
+@font-face /* 10 */ {
+  font-family: MJXTEX-A;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_AMS-Regular.woff") format("woff");
+}
+
+@font-face /* 11 */ {
+  font-family: MJXTEX-C;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Regular.woff") format("woff");
+}
+
+@font-face /* 12 */ {
+  font-family: MJXTEX-CB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Calligraphic-Bold.woff") format("woff");
+}
+
+@font-face /* 13 */ {
+  font-family: MJXTEX-FR;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Regular.woff") format("woff");
+}
+
+@font-face /* 14 */ {
+  font-family: MJXTEX-FRB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Fraktur-Bold.woff") format("woff");
+}
+
+@font-face /* 15 */ {
+  font-family: MJXTEX-SS;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Regular.woff") format("woff");
+}
+
+@font-face /* 16 */ {
+  font-family: MJXTEX-SSB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Bold.woff") format("woff");
+}
+
+@font-face /* 17 */ {
+  font-family: MJXTEX-SSI;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_SansSerif-Italic.woff") format("woff");
+}
+
+@font-face /* 18 */ {
+  font-family: MJXTEX-SC;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Script-Regular.woff") format("woff");
+}
+
+@font-face /* 19 */ {
+  font-family: MJXTEX-T;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Typewriter-Regular.woff") format("woff");
+}
+
+@font-face /* 20 */ {
+  font-family: MJXTEX-V;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Regular.woff") format("woff");
+}
+
+@font-face /* 21 */ {
+  font-family: MJXTEX-VB;
+  src: url("app://obsidian.md/lib/mathjax/output/chtml/fonts/woff-v2/MathJax_Vector-Bold.woff") format("woff");
+}
+
+mjx-c.mjx-c1D461.TEX-I::before {
+  padding: 0.626em 0.361em 0.011em 0;
+  content: "t";
+}
+
+mjx-c.mjx-c1D44E.TEX-I::before {
+  padding: 0.441em 0.529em 0.01em 0;
+  content: "a";
+}
+
+mjx-c.mjx-c1D44F.TEX-I::before {
+  padding: 0.694em 0.429em 0.011em 0;
+  content: "b";
+}
+
+mjx-c.mjx-c1D459.TEX-I::before {
+  padding: 0.694em 0.298em 0.011em 0;
+  content: "l";
+}
+
+mjx-c.mjx-c1D452.TEX-I::before {
+  padding: 0.442em 0.466em 0.011em 0;
+  content: "e";
+}
+
+mjx-c.mjx-c1D45C.TEX-I::before {
+  padding: 0.441em 0.485em 0.011em 0;
+  content: "o";
+}
+
+mjx-c.mjx-c1D453.TEX-I::before {
+  padding: 0.705em 0.55em 0.205em 0;
+  content: "f";
+}
+
+mjx-c.mjx-c1D450.TEX-I::before {
+  padding: 0.442em 0.433em 0.011em 0;
+  content: "c";
+}
+
+mjx-c.mjx-c1D45B.TEX-I::before {
+  padding: 0.442em 0.6em 0.011em 0;
+  content: "n";
+}
+undefined
+</style>
+    </head>
+    <body>
+<p><strong><img src="https://lh6.googleusercontent.com/WA9twnpho-SMGNp5Ha9bqB2yKTet5HRtvZSBmctOELHarZUDhHToOZGyTXdd_BSHCEqiA5Lv0QvWAdd3TKuYEk-z4-_PRypwxq8-BdWyK3ucFJ4cv1UaJ2EHBGn2J0juT-hADrRJbdan7B0Epo5498A" referrerpolicy="no-referrer"></strong>  v. 1.1.1</p>
+<p>Streampool is a multi-tenant, easy scalable, fault tolerant content delivery service for distributing adaptive media streams to the end users.&nbsp;</p>
+<ul>
+<li>Supported formats: HLS, DASH, CMAF</li>
+<li>Ingest for Live streams, Events and VOD assets</li>
+<li>Just in time VOD packager</li>
+<li>Content can be protected by ACL, Token and restricted by country&nbsp;</li>
+<li>Configurable DVR allows to have catch-up and timeshift features out of the box&nbsp;</li>
+<li>Extended online statistic for ingest and delivery</li>
+<li>DRM Passthrough</li>
+</ul>
+<h1 data-heading="Content">Content</h1>
+<ul>
+<li><a data-tooltip-position="top" aria-label="1. Spots" data-href="#1. Spots" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.%20Spots" class="internal-link" target="_blank" rel="noopener">1. Spots</a>
+<ul>
+<li><a data-tooltip-position="top" aria-label="1. Spots > 1.1 Spots Details:" data-href="#1. Spots#1.1 Spots Details:" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.%20Spots#1.1%20Spots%20Details:" class="internal-link" target="_blank" rel="noopener">1.1 Spots Details:</a></li>
+<li><a data-tooltip-position="top" aria-label="1. Spots > 1.2 Spot Settings" data-href="#1. Spots#1.2 Spot Settings" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.%20Spots#1.2%20Spot%20Settings" class="internal-link" target="_blank" rel="noopener">1.2 Spot Settings</a>
+<ul>
+<li><a data-tooltip-position="top" aria-label="1.2 Spot Settings > 1.2.1. Dashboard" data-href="#1.2 Spot Settings#1.2.1. Dashboard" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2%20Spot%20Settings#1.2.1.%20Dashboard" class="internal-link" target="_blank" rel="noopener">1.2.1. Dashboard</a>
+<ul>
+<li><a data-tooltip-position="top" aria-label="1.2.1. Dashboard > 1.2.1.1 Ingest statistic:" data-href="#1.2.1. Dashboard#1.2.1.1 Ingest statistic:" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2.1.%20Dashboard#1.2.1.1%20Ingest%20statistic:" class="internal-link" target="_blank" rel="noopener">1.2.1.1 Ingest statistic:</a></li>
+<li><a data-tooltip-position="top" aria-label="1.2.1. Dashboard > 1.2.1.2 Delivery statistic" data-href="#1.2.1. Dashboard#1.2.1.2 Delivery statistic" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2.1.%20Dashboard#1.2.1.2%20Delivery%20statistic" class="internal-link" target="_blank" rel="noopener">1.2.1.2 Delivery statistic</a></li>
+<li><a data-tooltip-position="top" aria-label="1.2.1. Dashboard > 1.2.1.3 Playback statistic" data-href="#1.2.1. Dashboard#1.2.1.3 Playback statistic" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2.1.%20Dashboard#1.2.1.3%20Playback%20statistic" class="internal-link" target="_blank" rel="noopener">1.2.1.3 Playback statistic</a></li>
+<li><a data-tooltip-position="top" aria-label="1.2.1. Dashboard > 1.2.1.4 Popular content" data-href="#1.2.1. Dashboard#1.2.1.4 Popular content" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2.1.%20Dashboard#1.2.1.4%20Popular%20content" class="internal-link" target="_blank" rel="noopener">1.2.1.4 Popular content</a></li>
+<li><a data-tooltip-position="top" aria-label="1.2.1. Dashboard > 1.2.1.5 Management" data-href="#1.2.1. Dashboard#1.2.1.5 Management" href="C:\Users\Setplex\Documents\Obsidian Vault\index.html#1.2.1.%20Dashboard#1.2.1.5%20Management" class="internal-link" target="_blank" rel="noopener">1.2.1.5 Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="1. Spots">1. Spots</h2>
+<p>Overview: Spot is an independent Streampool cluster consisting of one or several nodes located in one data center. One provider can have several spots in different locations (DC), as well as one spot can serve several providers. End users can be stitched to appropriate Spot based on flexible routing rules.&nbsp;</p>
+<p>The Main screen of spots monitoring can be displayed in several variants:</p>
+<ul>
+<li><img src="https://lh5.googleusercontent.com/tJeEGfUD2snLpGTig0y_J4_6_0hg4OsjL4LzayEY6GzPp0pjRN4dAKPaZrNLWDqnCyPe0bHWvfAETgkEDiSPPqBxo2O167CVxwHj4yxkIZBbJWtu7shYBsYaULh6_62SM89rE5KF26cKOK_bEKNZkzM" referrerpolicy="no-referrer"> - Click to see Spots in Cards view.<br>
+</li>
+</ul>
+<p><img src="https://lh3.googleusercontent.com/K8IxLiP7R5wJd0QnlXUMd6UWMVMsRV96gjkzh8GB_Yfk9T32D5xxXuf_wr4_trWzE-UAmsBqumO0ta79FCUWoo9xJg66Fzmk7XQun_y_RT7uWFqm_WpbEq21yhh6SPuS2SIugnC8uMLZbKlPFL_kGho" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh3.googleusercontent.com/i6JpucBvyr-1LB3wLwG5DG7HDW_CvlkhCEND8Tc-8wB0MKLK5Xvm01_Ze6zCY187ZbPcelCDs9nQhVhRZuDYLcGQxJldN4T7tZktvoDCzR63CY9O4aA6r-m9zPajLbpmZqokV-f-BUxbbqLWKX31YFU" referrerpolicy="no-referrer"> - Click to see Spots in Table view.<br>
+</li>
+</ul>
+<p><img src="https://lh6.googleusercontent.com/CNZKjdr0jRIdXbfUiISVMJyTWQQiMBi-ZifYeaMKAq-pNYg5lVupEISn9bo8sl7VHg_KyaAFqKcciG50mgKH0wLU2y7t9A2j46g6CWppC-0Vql7Ppf2kTXck26gn_cnCnBVxubmDXJvZDKTbqqNzp30" referrerpolicy="no-referrer"></p>
+<ul>
+<li>
+<p><img src="https://lh6.googleusercontent.com/MHxtyQmr-2oUXNmpedmI9wt8PbQwXRLRPRWNHtj0kJzfRNEUlOI9exqKHWixqE3JluabkNsatjQuYzSJkX3YgDbSRtr2pWNELPOSLPPjQgN4TNlfOoNIlSVBRuYIkaqRLfWfXRFMmUpoNafacpSPd6M" referrerpolicy="no-referrer"> - Click to see Spots in Map view.<br>
+<img alt="Pasted image 20231003170057.png" src="Pasted image 20231003170057.png" class="internal-embed"></p>
+</li>
+<li>
+<p><strong>Search field</strong> - Search Spots by Name.</p>
+</li>
+<li>
+<p><strong>Customers</strong> - Select Customers from the dropdown list to see Spots attached to them.</p>
+</li>
+<li>
+<p><strong>Filter by status</strong> - Select option to filter spots:</p>
+<ul>
+<li>Total - Select to display all spots;</li>
+<li>Online - Select to display Online spots only;</li>
+<li>Offline - Select to display Offline spots only</li>
+</ul>
+</li>
+<li>
+<p><strong>Live statistics</strong> - Switch ON to see Spots statistics in real time. When Live statistics is disabled Spots information is updated after refreshing the page.</p>
+</li>
+<li>
+<p><strong>Add new spot</strong> - Click to open the for new spot creation.</p>
+<ul>
+<li>Name - Type a name for the spot;</li>
+<li>API Key - Insert the API key.</li>
+<li>Server URL - Insert the Server URL.</li>
+<li>Location - Fill the fields with information about Server location.
+<ul>
+<li><img src="https://lh4.googleusercontent.com/zWaCc5vW1WPnJRlvu3dICMTVZFiS7wSeWH-FX_wDH5-Ib8WGM_ZYoiO9r3yOrGwBOStRm_g-ZwcEPdc16w7o3GnJK1uAVrax9SJPTTu51TnY7B7JlYLAiItsnFA4SseKfWp6zTXkSXErVCYavaQoibQ" referrerpolicy="no-referrer"> - Click to fill Location fields automatically based on the Server URL.</li>
+<li>Country - Type the name of the country the Server is located in.</li>
+<li>City - Type the name of the city the Server is located in.</li>
+<li>'Latitude - Insert the Latitude of the Server location.</li>
+<li>Longitude - Insert the longitude of the Server location.   </li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="1.1 Spots Details:">1.1 Spots Details:</h3>
+<ul>
+<li>Spot status;<br>
+Available Values:
+<ul>
+<li><img src="https://lh5.googleusercontent.com/U1IW-mNwMzpUL2qydM05UfPWzXTevhuwPCHfLETWmmIDoqa9Sk7CVdFUA78TO8maCIg1DTP8V-kLOTsyU1MJIQ2RZhGCh7u7eqVMNX97i9roBhglRgdN34f402I8HTf12EbzIn1pWVgzuyfGeE-S8J4" referrerpolicy="no-referrer"> - The Spot is Online;</li>
+<li><img src="https://lh4.googleusercontent.com/U1NLfF2q3VSE1A7gkpAe5oRm2FNaNss8xP9_j5TiNMpkLMnGGDoFH4Nmyd8y88mNu99dEqVikQwoAOA7vG80c4Qt_2pyCj_QHFW6rlEA2KKz200PE7MVean9W13_ORdyXwqRG1w2SKiaJwPnwtDCZnE" referrerpolicy="no-referrer"> - The Spot is Not Available;</li>
+<li><img src="https://lh6.googleusercontent.com/KAhh-mtb0nzQVJ9-QHLwkqpa_28UM_tYdvZ5jgjvXA3c1emKoT3seD-nuWVqBg7nZIwbd83TmmD4yqX9LDlR73R0XKrBUH5ZnEu-a1QM592zAeO9srqsA8JK5o9UYynvXHB1XxdoD5nqYPi-4aUikUg" referrerpolicy="no-referrer"> - The Spot is Offline.</li>
+</ul>
+</li>
+<li>Spot Name;</li>
+<li>Spot Location;</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh3.googleusercontent.com/A_HXM5v8GgCm3ZVjRPAKguOPZOnDHtsvMa8paCn2NJNAH4OzgKDiVo-zQqP_XkHNJS8nc_fpfzyYpdz0_G7EFh-lGBQQpw6fhhHvbCO8fcoFJOxA38AA9XU9lqaEqIS5_x-EdE_tcCtMX8NOxoYg9Hk" referrerpolicy="no-referrer"></td>
+<td>Location is displayed in the form of country and city.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Spot version;</li>
+<li>Current Ingest bitrate;</li>
+<li>Origin - Number of streamers uploading content to the Streampool;</li>
+<li>Number of streams uploaded to the Streampool;</li>
+<li>Percentage of errors in uploading stream.</li>
+<li>Current Delivery bitrate;</li>
+<li>Number of viewers of the content delivering from the Streampool;</li>
+<li>Number of streams viewed from the Streampool;</li>
+<li>Percentage of errors in delivering content;</li>
+<li>Status of the spot;</li>
+<li>Switch ON/OFF the Spot;</li>
+<li>Avatars of the customers attached to the Spot.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>Switch ON “Live Statistics” to see statistics of the Spot in real time. When “Live Statistics” is OFF, the statistics is updated after refreshing the page.</td>
+</tr>
+</tbody>
+</table>
+<h3 data-heading="1.2 Spot Settings">1.2 Spot Settings</h3>
+<p>Path: Main Screen → Click on Spot.</p>
+<p><img src="https://lh4.googleusercontent.com/-V2gWEfshxAhzBqxSCzQm93TiYbz3xwRiGrbKPbb4z1bhyVE8TPjA-zRPyAqGt3qeUGkpw8qaQsL4BnfHbN6yClB1pEr3EOZV3U8M1-pRIl0pxW9nXlCSSEVkqk6FQx2Yuw2vDl9GfjQQMeswvqOhCE" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Displays the name of the Spot.   </li>
+<li>Displays the version of the Spot.</li>
+<li>Displays the location of the Spot.</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh3.googleusercontent.com/A_HXM5v8GgCm3ZVjRPAKguOPZOnDHtsvMa8paCn2NJNAH4OzgKDiVo-zQqP_XkHNJS8nc_fpfzyYpdz0_G7EFh-lGBQQpw6fhhHvbCO8fcoFJOxA38AA9XU9lqaEqIS5_x-EdE_tcCtMX8NOxoYg9Hk" referrerpolicy="no-referrer"></td>
+<td>Location is displayed in the form of country and city.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><img src="https://lh5.googleusercontent.com/sPU_wyCa5AtJKHb5yn8uRN6U0E8gfFd1do5VSBW9mNLmw8AXbuCO3bMSX5EbS_kyLgavq0xzL_EMVr9fLadP3G3v5kKx__q3b4DH1p3eq3zxg0iBliAHyDM3PTa30ZiFehQQIGE5dfe6bwZRB31-GGY" referrerpolicy="no-referrer"> - Click to edit the Spot.
+<ul>
+<li>Name - Displays the name of the Spot. Type a new name for the Spot.</li>
+<li>API Key - Displays last 4 symbols of API Key, others are hidden by “*” signs. Insert new Api Key.</li>
+<li>Server URL - Displays the Server URL of the Spot. Insert new Server URL.</li>
+<li>Enable - Switch ON/OFF the Spot.</li>
+<li>Location - Displays the information about Server location.
+<ul>
+<li><img src="https://lh4.googleusercontent.com/zWaCc5vW1WPnJRlvu3dICMTVZFiS7wSeWH-FX_wDH5-Ib8WGM_ZYoiO9r3yOrGwBOStRm_g-ZwcEPdc16w7o3GnJK1uAVrax9SJPTTu51TnY7B7JlYLAiItsnFA4SseKfWp6zTXkSXErVCYavaQoibQ" referrerpolicy="no-referrer"> - Click to fill Location fields automatically based on the Server URL.</li>
+<li>Country - Displays the name of the Country the Spot is located in. Type new name of the Country.</li>
+<li>City - Displays the name of the City the Spot is located in. Type new name of the City.</li>
+<li>Latitude - Displays the Latitude of the Spot location. Insert new latitude.</li>
+<li>Longitude - Displays the Longitude of the Spot location. Insert new Longitude.</li>
+<li>Save - Click to save the changes.</li>
+<li><img src="https://lh3.googleusercontent.com/191hH4JMEVjMI1wTGLdU1GVfuXWi2UAmJ9ivDxO2xhWODnEQUthAjnDw-9ZvHl_eM7cXYy9fMUkljQdygliqL59mBT6O-qhgwyPZ_XIiClA-R3-UM7EYDiAkracfuJiwrnEt0TZ-Poawh0TdRSK0Q5c" referrerpolicy="no-referrer"> - Click to delete the Spot.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 data-heading="1.2.1. Dashboard">1.2.1. Dashboard</h4>
+<p><strong>Overview</strong>: Dashboard is an information management tool that visually tracks and displays statistical data and key metrics to monitor the current state of the spot.</p>
+<p><img src="https://lh6.googleusercontent.com/9lygj5KsPcMGu0DsEWzhqanJs04n-fmfd3D9XXDDA6Di0OB6rU3SSNk8oJQk7n7boJ1-KJKF4SJVXa3iEi4Z2P-nvtKSW91h5n7jjxldfLEuFPL2iwINXsu8gi2nWDVec-ghsVGDZ8pGshiMfaqp_2U" referrerpolicy="no-referrer"></p>
+<p>Dashboard Details:</p>
+<ul>
+<li>Period - Select the period for statistics display.
+<ul>
+<li>Absolute time range - Define the period of statistics displayed by inputting date and time.
+<ul>
+<li>Date from - Type the starting date or click  <img src="https://lh5.googleusercontent.com/Q-OYI5RKEbli1AX8r8ycvTLjE03VvKQyE93LWD3BC27OMA1m_r0-54JnQUvj0Q8PnT4dQpqKS7iC0SPJn7Du_FNv_YK4r7x6VmwzCVS6X3xLMa5jSPEH9B03cdDAPuITZGXtxFLR52Bj2UfiZoykuC8" referrerpolicy="no-referrer">  and select the starting date from a calendar.</li>
+<li>Time from - Type the starting time.</li>
+<li>Date to - Type the ending date or click  <img src="https://lh5.googleusercontent.com/Q-OYI5RKEbli1AX8r8ycvTLjE03VvKQyE93LWD3BC27OMA1m_r0-54JnQUvj0Q8PnT4dQpqKS7iC0SPJn7Du_FNv_YK4r7x6VmwzCVS6X3xLMa5jSPEH9B03cdDAPuITZGXtxFLR52Bj2UfiZoykuC8" referrerpolicy="no-referrer">  and select the ending date from a calendar.</li>
+<li>Time to - Type the ending time.</li>
+</ul>
+</li>
+<li>Select time range - Select the period of time until present moment to display the statistics.
+<ul>
+<li>Search - Search the option for “Select time range”.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><img src="https://lh3.googleusercontent.com/KpGNhP5tVnYS4fKLBQXo7O-1WjHrFgw0G59YnKK7HpLx1yrd2K3zDltbE3fWY4pFoWe09zM0u4LTvo2Nn4wAsm0pp9LZdch4Bm-h9iy7eJbRZgu-_gNnlJIBxp_YbkAwXkSbP4SmtIVuIrLkdtJ-04A" referrerpolicy="no-referrer"> - click to refresh statistics immediately.</li>
+<li>Time range - Select the period of auto refreshing statistics.</li>
+<li>Customers - Select customers to display statistics for.&nbsp;</li>
+<li>Pools - Select pools to display statistics for.</li>
+<li>Streams - Select streams to display statistics for.&nbsp;</li>
+<li>Status codes - Select status code to display statistics for.&nbsp;</li>
+</ul>
+<h5 data-heading="1.2.1.1 Ingest statistics:">1.2.1.1 Ingest statistics:</h5>
+<p><strong>Overview</strong>: Displays the Information about uploading content to the Streampool.<br>
+Ingest details:</p>
+<p><img src="https://lh6.googleusercontent.com/FPqdII59r6SowiQFJ0F-9iTyBNCEWNiLAOx71mAZ-oD4Auj7peSoeoo1fGZfz8ojVbV7yO3GGniVamU8KrHBDoqn7Md3D17FEIsdZHDfviaKztAoxuoS9jnNz_f7I5QFvd219EmdhM0X-75Fo--Qflk" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Ingest Bitrate for the selected period.    </li>
+<li>Ingest Traffic for the selected period.</li>
+<li>Ingest PRS for the selected period.</li>
+<li>Number of streams uploaded to the Streampool on selected period.</li>
+<li>Diagram displays ingest response codes and percentage of each response code.</li>
+</ul>
+<h6 data-heading="Ingest Traffic Chart:">Ingest Traffic Chart:</h6>
+<p><strong>Overview</strong>: Chart displays total traffic information by default, with the displaying minimum, maximum and average value for the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/AfhBN56DG5xCmyOV8XNueXPqntweTs8TDP_b4zzcL2eruwXVIvxyQtZOv8cqprg0puwj2VNm31vgXNdM7remAjZYb3qcKbHC4Ll-tubCM0Qo8Jf8pLJLvxqcQze8FbIvmdhuJJxU0hVJpZi9NZeXXEY" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.</li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Ingest traffic bitrate.</li>
+<li>Max - Displays the maximum Ingest traffic bitrate.</li>
+<li>Avg - Displays the average Ingest traffic bitrate.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Ingest Requests Chart">Ingest Requests Chart</h6>
+<p><strong>Overview</strong>: Chart displays the numbers of requests, minimum, maximum and average value of RPS the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/WGso7_ogJ3vcLLblQYd12okNQwoThcE_b4oNN323xSocFTrP3XACPbvICMY_plYc7q9S6YjVOhD3XoVoyNhNSiDriLUEGQr3c0XO-VSuPyHqjDWwfBf07DvoZp9TDIZLaizzgJEvXvBd2lJ1zEH9YrA" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.</li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data. Grouped by Status code by default.
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None,</li>
+<li>Status code (default value),</li>
+<li>Instance.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum RPS.</li>
+<li>Max - Displays the maximum RPS.</li>
+<li>Avg - Displays the average RPS.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Ingest Response time Chart">Ingest Response time Chart</h6>
+<p><strong>Overview</strong>: Chart displays total information about total response time with the displaying minimum, maximum and average Response time for the selected period.  </p>
+<p><img src="https://lh4.googleusercontent.com/XbNxxfZlW5-w0Bc7tEMWnV-aspJFuNrYXWZ8UrTLMvxv9E66rZNEHFu6hiFnoJ6aaRr58UtE7hOUVL58A9ILlQPWATYgkJ6A8EqdIOMmfxxaOeyrfZoFQbD7S9C4QDKUvv3v8wZPaEnP0f6EqUvt-no" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Response time.</li>
+<li>Max - Displays the maximum Response time.</li>
+<li>Avg - Displays the average Response time.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h5 data-heading="1.2.1.2 Delivery statistics">1.2.1.2 Delivery statistics</h5>
+<p><strong>Overview</strong>: Displays the information about delivery from the Streampool.</p>
+<p><img src="https://lh6.googleusercontent.com/ksmyUfqLEoqcJvNmdxt_Q9IcZOMB1rurYTBvaqFZ4y9AcCTY8tSRYaBE_HqRxZrACRn6XINlB1P6cYtTlT6SbghgQ_j4r94vjGvGelk2LWrTMs2-_J2yNYjQ_iGosPasMgjRqiqLiilMX4Yjg6ZyE3I" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Delivery Bitrate for the selected period.    </li>
+<li>Delivery Traffic for the selected period.</li>
+<li>Delivery RPS for the selected period.</li>
+<li>Number of streams delivered by Streampool.</li>
+<li>Hit ratio of successfully served content from the Streampool.</li>
+<li>Diagram displays delivery response codes and percentage of each response code.</li>
+</ul>
+<h6 data-heading="Delivery Traffic Chart:">Delivery Traffic Chart:</h6>
+<p><strong>Overview</strong>: Chart displays total traffic information by default, with the displaying minimum, maximum and average value for the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/7Y0nugJSWp12MdsArVHVBVQl62N3pvkDexb14vKKPdM2kxEl6z6eYdH0u8RGjGkUGsK_03pZJ36s7nTMlo5jJDa71vnbAmofe5kxu9t7d0EFkR3M_5nq9q19IBRDO7xmISI9MjXKvhpsyxIVN50jI3w" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Served from,y</li>
+<li>City,</li>
+<li>Subdivision,</li>
+<li>Country,</li>
+<li>Continent,</li>
+<li>ISP,</li>
+<li>OS,</li>
+<li>Device Type,</li>
+<li>Browser,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Delivery traffic bitrate.</li>
+<li>Max - Displays the maximum Delivery traffic bitrate.</li>
+<li>Avg - Displays the average Delivery traffic bitrate.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Delivery Requests Chart">Delivery Requests Chart</h6>
+<p><strong>Overview</strong>: Chart displays the numbers of requests, minimum, maximum and average RPS for the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/WGso7_ogJ3vcLLblQYd12okNQwoThcE_b4oNN323xSocFTrP3XACPbvICMY_plYc7q9S6YjVOhD3XoVoyNhNSiDriLUEGQr3c0XO-VSuPyHqjDWwfBf07DvoZp9TDIZLaizzgJEvXvBd2lJ1zEH9YrA" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data. Grouped by Status code by default.
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>Status code (default value),</li>
+<li>Instance,</li>
+<li>Served from.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum RPS.</li>
+<li>Max - Displays the maximum RPS.</li>
+<li>Avg - Displays the average RPS.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Ingest Response time Chart">Ingest Response time Chart</h6>
+<p><strong>Overview</strong>: Chart displays total information about total response time with the displaying minimum, maximum and average Response time for the selected period.</p>
+<p><img src="https://lh4.googleusercontent.com/XbNxxfZlW5-w0Bc7tEMWnV-aspJFuNrYXWZ8UrTLMvxv9E66rZNEHFu6hiFnoJ6aaRr58UtE7hOUVL58A9ILlQPWATYgkJ6A8EqdIOMmfxxaOeyrfZoFQbD7S9C4QDKUvv3v8wZPaEnP0f6EqUvt-no" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Response time.</li>
+<li>Max - Displays the maximum Response time.</li>
+<li>Avg - Displays the average Response time.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h5 data-heading="1.2.1.3 Playback statistic">1.2.1.3 Playback statistic</h5>
+<p><strong>Overview</strong>: Displays most popular client applications used for access to content from the Streampool.</p>
+<p><img src="https://lh3.googleusercontent.com/G67DThRT8HFN28kUG42VaZewz4l4DI1Aw4gzwndsLK8tptjrMlx5hjbAll_CTKcaH2LMk9aH2mhXfABU1n0OKmuiMooZxPvh2H0ckq-9K7RbeYAJNVUnp7GPbFoPed0rWaiaKPOcYTBnEmq1X4MKcFs" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Number of unique sessions of getting access to content from the Streampool for the selected period.    </li>
+<li>Top of popular client applications (User agents), which were used for access to content from the Streampool, the rest are combined into an “Other” group.</li>
+<li>Ring diagram displays distribution of requests by User agent.<br>
+Unique sessions Chart<br>
+Overview: Chart displays a number of unique user sessions during the playback period, with the displaying minimum, maximum and average value.</li>
+</ul>
+<p><img src="https://lh6.googleusercontent.com/yfyv1SA1D0xwN7unlHfBnkgcNTLCP4dR8-L7E3qb7ReNVgmTo9CncarBBubs_svaewkWzzAYIqsKgZCZVaKtqzQwNACtq4lGq3KUTq5BAw7RxU2_U6MPr11kBAEHQ-G_DJrQSlcynUO6FC93tT1YtTs" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Unique sessions Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Unique sessions Chart in bar graph view.</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>User agent,</li>
+<li>City,</li>
+<li>Subdivision,</li>
+<li>Country,</li>
+<li>Continent,</li>
+<li>ISP,</li>
+<li>OS,</li>
+<li>Device Type,</li>
+<li>Browser,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum number of Unique sessions.</li>
+<li>Max - Displays the maximum number of Unique sessions.</li>
+<li>Avg - Displays the average number of Unique sessions.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h5 data-heading="1.2.1.4 Popular content">1.2.1.4 Popular content</h5>
+<p><strong>Overview</strong>: Displays the most popular content watched during the selected period.</p>
+<p>&nbsp;<img src="https://lh6.googleusercontent.com/MvKDbN1Ubhrlkq68fKuI7QBAzOnE0klPhT8RxCtfGz67eHJ-WeBY0OIFGfcF2wcgvvqu9jgITSpQOzLWehhoOjPqI1QlXFKRLqLgy1b52QzODgM8i-li50K8VAWb0XrtoVtIBVBPYN1c6WUqhm0xIgI" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Names of the most popular content for the selected period.    </li>
+<li>Ring diagram displays the share of each stream in total watch time.</li>
+</ul>
+<h5 data-heading="1.2.1.5 Management">1.2.1.5 Management</h5>
+<p><strong>Overview</strong>: Displays internal traffic between Streampool and spot.</p>
+<p><img src="https://lh6.googleusercontent.com/fuFy4Hsdgvri8TsplLoLabtKdKbwu0yl6hRdsZx5rThY09fV1IH1q_DbyeEy6ZR9IJaJ1NFqzdaSonXpJQKsUgU_NYDYjcBqMnrdWt_fPANoR_l_9WBtA-j188xg1Ku2H3zNasUY40fnj4nBESGXM2Y" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Internal traffic for the selected period.</li>
+<li>Internal RPS for the selected period.</li>
+<li>Ring diagram displays Response codes and the percentage of each error.</li>
+</ul>
+<h6 data-heading="Internal Traffic Chart">Internal Traffic Chart</h6>
+<p><strong>Overview</strong>: Chart displays total traffic information, with the displaying minimum, maximum and average value for the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/m_ycpXRf7vZFdW-gNYNQSvwLqVrSsK1QPLyPeebRUs5NYzAZ9rwKO7mdIIWSojwCx-Vm6aP5IluQ0Moab646okwyLwPdsAH7IQ-cJV5_xPIB4K01M5o6ocVZH-O-bkkYcflQ270vKSVvSCjZiuNyaIY" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Internal traffic bitrate.</li>
+<li>Max - Displays the maximum Internal traffic bitrate.</li>
+<li>Avg - Displays the average Internal traffic bitrate.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Internal Requests Chart">Internal Requests Chart</h6>
+<p><strong>Overview</strong>: Chart displays numbers of requests, which are grouped by response code by default,&nbsp; with the displaying minimum, maximum and average value of RPS for the selected period.</p>
+<p><img src="https://lh4.googleusercontent.com/o0dPFhEGei65g6Zlz376Ye9kBCsLhPFkNG1zufprHt5ufQZfDoeLYxvUVNsmFMWCljcqB0pOObPJ7pOM3AndI67KrCOdbLImIPJC2L5CZrkRMEznFZAUyU0YpyW4tJkb99009iNIjgDUSi2YuML65fQ" referrerpolicy="no-referrer"></p>
+<ul>
+<li>&nbsp;<img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Internal Requests Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Internal Requests Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data. Grouped by Status code by default.
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None,</li>
+<li>Status code (default value),</li>
+<li>Instance,</li>
+</ul>
+</li>
+<li>Min - Displays the minimum RPS.</li>
+<li>Max - Displays the maximum RPS.</li>
+<li>Avg - Displays the average RPS.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h6 data-heading="Internal Response time Chart">Internal Response time Chart</h6>
+<p><strong>Overview</strong>: Chart displays total information about response time by default, with the displaying minimum, maximum and average value for the selected period.</p>
+<p><img src="https://lh5.googleusercontent.com/qB0PjAybSCUhwamJxnguXqDFXeqqsNDh2_f4slBPW0lNHnEmWX7vJWfxDVMd_fb-0AAKF5xlwElnBb0s3F-Xza14JoDjOLmvmZNNSE3lbjpIOp4P0jqEWUoltqKNmzgEXPggrPUtGGGdKRJU85sFjhE" referrerpolicy="no-referrer"></p>
+<ul>
+<li><img src="https://lh6.googleusercontent.com/i4jUjthNi84jcGPoYzEPymjepdJUxv8ggiG6vFxqdp2dfgPAUb6Cex7xOndTRzFFetyPeROa07qwRSCUMZcfr47retqzDpr2NUO_jR6pNyY6mCyLbeLozoyAY2P7RKmnQniUDbPrnPp3rVHh1_PEEsA" referrerpolicy="no-referrer">&nbsp; - Click to view the Traffic Chart in line graph view.    </li>
+<li><img src="https://lh6.googleusercontent.com/r_au3mk2HFEss7cCKUQjuMdcycITvYZ90jeO20iuZ1HvsrRHA0O5Z1jEC1iZzGreZji0zuk5nY4-xD98tQg2RmoqbF67t8Zh8LctP6wQPK-JE6NTb5SWAMa_haSNBw1tPq4zapRt30oo9zAXGkCYBlI" referrerpolicy="no-referrer"> - Click to view Traffic Chart in bar graph view.</li>
+<li><img src="https://lh4.googleusercontent.com/RRdP6k4gK-P3WQBtvdA3Vx46gqQklXluejaTShjB8BC6dt4ifZCTxDBmcyMiQXa7YWw8Quxgj3Nu4K3j6xp9CXR_uOIsQiKWPcLP_kCi1T-EZai8M9tWjG5enL-oiim-6tZOSvXaMM15c9yLbn1w0Iw" referrerpolicy="no-referrer"> - Click to display Raw data
+<ul>
+<li>Timestamp - Displays the date and time of the request.</li>
+<li>Method - Displays the Method of the Request.</li>
+<li>Status code - Displays the Status Code.</li>
+<li>URI - Displays the URI of the Request.</li>
+<li>Client IP - Displays the IP of the Client.</li>
+<li>User Agent - Displays the User Agent version.</li>
+<li>Content length - Displays the length of the Content in bytes.</li>
+<li>Response time - Displays the time needed for Response in milliseconds.</li>
+<li>Instance - Displays the version of Streampool, which processed the Request.</li>
+<li>Request Id - Displays the Id of the Request.</li>
+<li><img src="https://lh6.googleusercontent.com/kEjR8_hJF5XrzzRbSwjGlKvbOeAudrz3Yr9zjugIrPRY8u6kA-0RYif-ABgadynyPFreoroWfHTxdDcyNirR6nsEDsNRgmcklsrI7_9ERdTHZLRwASdkMfmg1GfzRufcGLwyxvTJu04rnII95rZ2wKE" referrerpolicy="no-referrer"> - Available at rightmost while hovering over the row - Click to go to logs for this request.</li>
+</ul>
+</li>
+<li>Group by - Select the option to group by it.&nbsp;
+<ul>
+<li>None (default value),</li>
+<li>Customer,</li>
+<li>Pool,</li>
+<li>Stream,</li>
+<li>Instance,</li>
+<li>Client IP.</li>
+</ul>
+</li>
+<li>Min - Displays the minimum Response time.</li>
+<li>Max - Displays the maximum Response time.</li>
+<li>Avg - Displays the average Response time.</li>
+<li>Select the area of a graph to view statistics for selected period only.</li>
+</ul>
+<h4 data-heading="1.2.2 Streams">1.2.2 Streams</h4>
+<p><strong>Overview</strong>: Displays uploaded and viewed streams of the Streampool.</p>
+<p><img src="https://lh3.googleusercontent.com/Hu4cmv5wg_7bCIAdpe-uX2qNumKd2kD0zwxx8DnJ5FaDW2DZ0IQEXOG_N3Eic4K_Aog4xoXXC7X4rezloPTCoHAj2yX0et6Xp08nGVxLFSZfWs52_RJ7fctUXycq3i8ncDehrVTKVBn0RcG0mbIOHhI" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Search field - Search Stream by Stream URI.    </li>
+<li>Period -  Select the period of time until present moment to display the statistics.</li>
+<li><img src="https://lh3.googleusercontent.com/KpGNhP5tVnYS4fKLBQXo7O-1WjHrFgw0G59YnKK7HpLx1yrd2K3zDltbE3fWY4pFoWe09zM0u4LTvo2Nn4wAsm0pp9LZdch4Bm-h9iy7eJbRZgu-_gNnlJIBxp_YbkAwXkSbP4SmtIVuIrLkdtJ-04A" referrerpolicy="no-referrer"> - Click to refresh the information.</li>
+<li>Customers - Select customers to display information for.</li>
+<li>Pools - Select pools to display information for.</li>
+<li>Total streams - Displays the number of streams uploaded and/or viewed at the selected period.</li>
+<li>Total traffic (Ingest) - Displays the total traffic of the streams, which were uploaded at the selected period.</li>
+<li>Total traffic (Delivery) - Displays the total traffic of the streams, which were delivered by Streampool at the selected period.</li>
+<li>Stream details table:
+<ul>
+<li>Stream - Displays the URI of the stream;</li>
+<li>Ingest - Displays the status of uploading of the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.<br>
+Available values:</li>
+<li>Active - Stream is uploading.</li>
+<li>Number of hours/days ago - Displays the time since the stream was uploaded</li>
+</ul>
+</li>
+<li>Traffic (Ingest) - Displays the ingest traffic of the stream. There is an option to sort the list by traffic in ascending/descending order.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Errors (Ingest) - Displays the number of errors in uploading the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Delivery - Displays the status of viewing the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.<br>
+Available values:</li>
+<li>Active - The stream is being viewed.</li>
+<li>Number of hours/days ago - Displays the time since the stream was viewed.</li>
+<li>"-" - The stream has not been viewed yet.</li>
+</ul>
+</li>
+<li>Traffic (Delivery) - Displays the delivery traffic of the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Errors (Delivery) - Displays the number of errors in delivering the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Viewers - Displays the number of viewers of the stream.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Watched - Displays the total viewing time.
+<ul>
+<li><img alt="Pasted image 20231004125530.png" src="Pasted image 20231004125530.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h4 data-heading="1.2.3 Pools">1.2.3 Pools</h4>
+<p>**Overview: Pool is a group of streams with unique settings for content source and delivery.&nbsp;</p>
+<h5 data-heading="1.2.3.1 Pool Details">1.2.3.1 Pool Details</h5>
+<p>Path: Spots - selected Spot - Pools - Add new pool/ Edit selected pool</p>
+<p><img src="https://lh3.googleusercontent.com/7NqAPWTvSpXh-QMgY-cClyrwVOsiIvhic6MhpWKIxCSLZGI_JoESE7-8P-sQDfO1hMpS2pFb_0qLy8ethPjk48D8LQwscX_jxSquETAX5yM7O22PoAW67YVqKHYD6CvCUsb559AoPmE1-P98mIT8ZMc" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Name - Type a unique name for the Pool.<br>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>A name of the Pool should not contain spaces and special characters and can’t be modified after it is saved.&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh3.googleusercontent.com/A_HXM5v8GgCm3ZVjRPAKguOPZOnDHtsvMa8paCn2NJNAH4OzgKDiVo-zQqP_XkHNJS8nc_fpfzyYpdz0_G7EFh-lGBQQpw6fhhHvbCO8fcoFJOxA38AA9XU9lqaEqIS5_x-EdE_tcCtMX8NOxoYg9Hk" referrerpolicy="no-referrer"></td>
+<td>A name of the pool must be unique as it is a part of Stream URI.</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>
+<p>Customer - Select a customer for this Pool.<img alt="Pasted image 20231004195459.png" src="Pasted image 20231004195459.png" class="internal-embed"></p>
+</li>
+<li>
+<p>Content source - Select the type of pool scheme.</p>
+<ul>
+<li>
+<p>Ingest - Content is uploading to the Streampool (PUSH scheme):<br>
+- Content type - Select the type of the content to upload to Streampool.<br>
+- Live - Live content stored depending on DVR settings:<br>
+- DVR - Enable to allow viewers to pause, rewind, and continue during the live content.<br>
+- Time of content storing - Type the number and select the unit of time.<br>
+- <img alt="Pasted image 20231004162555.png" src="Pasted image 20231004162555.png" class="internal-embed"> - Click to increase/decrease number of time units.<br>
+- <img alt="Pasted image 20231004162652.png" src="Pasted image 20231004162652.png" class="internal-embed"> - Click to delete the input.<br>
+- Vod - Vod content is always stored.<br>
+- Storage - Select the storage to save content to.<br>
+- Security - Select a type of permission to upload content:<br>
+- Allow all;<br>
+- Allow from following IPs/CIDR Blocks<br>
+- Advanced Settings - Click to see Advanced settings options.<br>
+- Bunch size - Type a size for the bunch in bytes.<br>
+- <img alt="Pasted image 20231004162555.png" src="Pasted image 20231004162555.png" class="internal-embed"> - Click to increase/decrease number of bytes.<br>
+- <img alt="Pasted image 20231004162652.png" src="Pasted image 20231004162652.png" class="internal-embed"> - Click to delete the input.<br>
+- DVR Masks - Type the DVR mask.<br>
+<img alt="Pasted image 20231004163453.png" src="Pasted image 20231004163453.png" class="internal-embed"></p>
+</li>
+<li>
+<p>Origin (pull) - Streampool pulls content from the Origin server (PULL scheme). Configuring settings of Origin (Pull) type of content&nbsp;result in a link for the Origin request<br>
+- Protocol - Select the Protocol.<br>
+Available values:<br>
+- Same as request - requires HTTP Port and HTTPS Port settings;<br>
+- HTTP - requires HTTP Port Settings;<br>
+- HTTPS - requires HTTPS Port Settings.<br>
+- Host name - Type the Host name.<br>
+- Host Header.<br>
+Available values:<br>
+- Incoming Hostname;<br>
+- Origin Hostname;<br>
+- Custom - Type a Custom Header.<br>
+- Path - Select the Path.<br>
+Available values:<br>
+- Keep incoming path<br>
+- Use prefix<br>
+- Path Prefix - Type Path Prefix.<br>
+- Replace Path<br>
+- New path - Type New Path.<br>
+<img alt="Pasted image 20231004191519.png" src="Pasted image 20231004191519.png" class="internal-embed"></p>
+</li>
+<li>
+<p>VOD Packager - media content (mp4 files) will be packaged on demand (just in time) into required format (HLS, DASH). </p>
+<ul>
+<li>Packager config - Select config for the packager.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>A special configuration is required to provide access to the “Packagers(insert link)” section. To get access contact our support team.&nbsp;&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<p><img src="https://lh3.googleusercontent.com/MCkQtRRQ3SFSCu_VYNsTExmsF3mDQ2JyBouvdFNhuWUdhPy0pyRsIkD38lUnPRmGwWk9Vdb6zba44NUojriBDtatgqtKr6v7BLzMzR-IR_H0ejiUAIJ9RrdX3QhdDZDH8H7t8ryCemn_OfIlXFtG3O4" referrerpolicy="no-referrer"></p>
+<ul>
+<li>
+<p>Delivery -&nbsp; this section is intended for content protection settings. It makes delivery content accessible to viewers and prevent unauthorized views.</p>
+<ul>
+<li>
+<p>Token Authentication - Switch ON to protect content by a token.</p>
+</li>
+<li>
+<p>Token - Specify a token or click the “Generate Key” button to generate it automatically.</p>
+<ul>
+<li><img alt="Pasted image 20231004191903.png" src="Pasted image 20231004191903.png" class="internal-embed"> - Click to copy Token Key.</li>
+</ul>
+</li>
+<li>
+<p>Geo Protection - Switch ON to protect content by imposing restrictions on geographical locations to get access from.</p>
+<ul>
+<li>Mode - select the type of rule to impose.<br>
+Available values:
+<ul>
+<li>Allow from following locations</li>
+<li>Deny from following locations</li>
+</ul>
+</li>
+<li>Countries - Select one or several countries to impose the rule on.
+<ul>
+<li><img alt="Pasted image 20231004193102.png" src="Pasted image 20231004193102.png" class="internal-embed"> - Click to delete the Country from the list.</li>
+</ul>
+</li>
+<li>Whitelist - Add IP/CIDR to give access to content to.
+<ul>
+<li><img alt="Pasted image 20231004193102.png" src="Pasted image 20231004193102.png" class="internal-embed"> - Click to delete the IP/CIDR from the list.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>IP/CIDR - Switch ON to specify IP/CIDR to impose rule on.</p>
+<ul>
+<li>
+<p>Mode.<br>
+Available values:</p>
+<ul>
+<li>Allow from following IPs/CIDR Blocks;</li>
+<li>Deny from following IPs/CIDR Blocks.</li>
+</ul>
+</li>
+<li>
+<p>Add IP/CIDR - Click to open pop-up for adding IP/CIDR.&nbsp;<br>
+<img alt="Pasted image 20231004194253.png" src="Pasted image 20231004194253.png" class="internal-embed"></p>
+<pre><code>- IP/CIDR # - Specify IP/CIDR;
+- Add more - Click tp add one more IP/CIDR.
+- Add IP - Click to add specified IPs/CIDRs to the settings.
+</code><button class="copy-code-button">Copy</button></pre>
+</li>
+<li>
+<p><img alt="Pasted image 20231004194623.png" src="Pasted image 20231004194623.png" class="internal-embed"> - Click to delete IP/CIDR from the list.</p>
+</li>
+<li>
+<p><img alt="Pasted image 20231004194700.png" src="Pasted image 20231004194700.png" class="internal-embed"> - Click to delete all IPs/CIDRs from the list.</p>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<p>Create pool/ Save - Click to create new pool or to save changes to edited pool.&nbsp;</p>
+</li>
+<li>
+<p><img alt="Pasted image 20231004194831.png" src="Pasted image 20231004194831.png" class="internal-embed"> - Click to delete the pool. </p>
+</li>
+<li>
+<p>Back - Click to go to List of Pools.</p>
+</li>
+</ul>
+<h5 data-heading="1.2.3.2 List of Pools">1.2.3.2 List of Pools</h5>
+<p>Path: Spots - Select Spot - Pools&nbsp;</p>
+<p><img alt="Pasted image 20231004195049.png" src="Pasted image 20231004195049.png" class="internal-embed"></p>
+<p>List of Pools is sorted by Name in ascending order (by default):</p>
+<ul>
+<li>Search field - Search Pool by Name.</li>
+<li>Add new pool button - Click to open the Pool creation form.&nbsp;&nbsp;</li>
+<li>Pool name - Displays the Name of the Pool.
+<ul>
+<li><img alt="Pasted image 20231004195229.png" src="Pasted image 20231004195229.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Customer - Displays the Customer attached to the Pool.
+<ul>
+<li><img alt="Pasted image 20231004195229.png" src="Pasted image 20231004195229.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Content source - Displays the type of pool scheme, content type and DVR duration.
+<ul>
+<li><img alt="Pasted image 20231004195229.png" src="Pasted image 20231004195229.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Publish Security - Displays Publish Security rules.
+<ul>
+<li><img alt="Pasted image 20231004195229.png" src="Pasted image 20231004195229.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Playback Security - Displays delivery security settings.</li>
+<li>Controls - Tools to perform operations with Pools:
+<ul>
+<li><img src="https://lh6.googleusercontent.com/Fj8Q6ScD-n530QDs69naUbhQFLARMLG0ZneRchpXzK-kKbj2ULGYlqnH0a7wkbDEF6vc8vIjvrB25Dzg2KVu2jSSa-cEqcfYq-JhPb9i3fouqfBZHu8EyQrQy6Tc3ntKXjTaQ7tBH974RazkHMAKIpo" referrerpolicy="no-referrer"> - Click to duplicate the Pool;</li>
+<li><img src="https://lh4.googleusercontent.com/SERFMMshwAVwbsFtg3to-E4Pi3VCbO82WnebN3iB-k-Uh8qeRDYqAL_5TVOLIwPg7GdWIJy48WNHpcgAj0K8k6VWBusS89EvNYlpI3Uwsnu_O8Gk4mHhvt6zV39obrg0AwZG76L5FuDioReSee7TRHI" referrerpolicy="no-referrer"> - Click to delete the Pool.</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="1.2.4 Storages">1.2.4 Storages</h3>
+<p>Overview: Displays available storages and their information.</p>
+<h4 data-heading="1.2.4.1 Storages Details:">1.2.4.1 Storages Details:</h4>
+<p>Path: Spots - selected Spot - Storages -Edit Storage (Click on a row with a Storage)/Add new storage<br>
+<img alt="Pasted image 20231005161209.png" src="Pasted image 20231005161209.png" class="internal-embed"></p>
+<ul>
+<li>Name - Type a Name for the Storage.</li>
+<li>Storage type - Select the type of the Storage.<br>
+Available values:
+<ul>
+<li>FileSystem:
+<ul>
+<li>Root dir - Insert the Path to Root directory for the Storage.</li>
+<li>File browser URL - Insert the File browser URL.</li>
+<li>User name - Type the User name.</li>
+</ul>
+</li>
+<li>WebDav:
+<ul>
+<li>Address - Type the Address for the Storage.</li>
+<li>User - Type the User name.</li>
+<li>Password - Type the Password.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Save/Create Storage - Click to Create new Storage or to Update changes.</li>
+<li><img alt="Pasted image 20231005162204.png" src="Pasted image 20231005162204.png" class="internal-embed"> - Click to Delete the Storage.</li>
+<li>Back - Click to go to List of available storages page.</li>
+</ul>
+<h4 data-heading="1.2.4.2 List of available storages:">1.2.4.2 List of available storages:</h4>
+<p><img alt="Pasted image 20231005154715.png" src="Pasted image 20231005154715.png" class="internal-embed"></p>
+<ul>
+<li>Search field - Search Storage by Name.</li>
+<li>Add new storage - Click to open the form for </li>
+<li>Name - Displays the Name of the Storage.    </li>
+<li>Type - Displays the Type of the Storage.</li>
+<li>Path - Displays the Path to Storage.</li>
+<li>Disc Usage - Displays the Disc Usage in GB, percentage of the total storage size used and total storage size.</li>
+<li>Controls - Tools to perform operations with Storages.
+<ul>
+<li><img alt="Pasted image 20231005160732.png" src="Pasted image 20231005160732.png" class="internal-embed"> - Click to Delete the storage.</li>
+<li><img alt="Pasted image 20231005160818.png" src="Pasted image 20231005160818.png" class="internal-embed"> - Click to Open file browser.</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="1.2.5 Packagers">1.2.5 Packagers</h3>
+<p>Overview: Delivering content for multiple devices using HTTP streaming can be done via HLS/DASH/CMAF streaming formats. The Streampool can package the content “on the fly” or “just in time” based on clients’ requests.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>A special option is required to provide access to the “Packagers” option. To get access contact our support team.&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<h4 data-heading="1.2.5.1 Packagers Details">1.2.5.1 Packagers Details</h4>
+<p>Path: Spots - selected Spot - Packagers - Add new packager/ Edit selected packager (Click on a row with a Packager)</p>
+<p><img src="https://lh6.googleusercontent.com/tJNruJVr1c4nLtpzzQNoglDKoonawtGwS2naZlgcsJdsUzmErJjrYA0t2ac2KtHP3zpS6z7dWxu56kCjpVqsDxLbMZo3rCd-IlhQhes1JeV3t9orb-UbypZ2xczLADzhrCa02c7_G0cXD3e6k68T6qw" referrerpolicy="no-referrer"></p>
+<ul>
+<li>Name - Type a Unique Name for the Packager. </li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>Name of a Packager should not contain spaces and special characters.&nbsp;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Customer - Select a particular Customer or All Customers for the Packager.</li>
+<li>Path - Insert the Path to the content for packaging.</li>
+<li>Segment duration - Type segment duration in seconds.
+<ul>
+<li><img alt="Pasted image 20231005165103.png" src="Pasted image 20231005165103.png" class="internal-embed"> - Click to Delete the Input.</li>
+<li><img alt="Pasted image 20231005165129.png" src="Pasted image 20231005165129.png" class="internal-embed"> - Click to Decrease/Increase value by click.</li>
+</ul>
+</li>
+<li>Create packager/ Save - Сlick to Create a packager or to Update changes.</li>
+<li>Delete <img src="https://lh5.googleusercontent.com/_-CSZK3K-JqjnXcY-cRHwYJHNzs4ApZPSXH3uOlBv6bcHX29ypAge28ajpDd4zQ-VTYdzZJ7EOl9j9UXgQWB9SElxuZudQCV15axXQkjXhFv5eJjjxttKoIGefXoAm1bA4aeXVPvAyPEZOiFbDhbgq8" referrerpolicy="no-referrer"> button - Click to Deletes the packager.</li>
+<li>Back - Click to go to List of Packagers.</li>
+</ul>
+<h4 data-heading="1.2.5.2 List of Packagers">1.2.5.2 List of Packagers</h4>
+<p>Path: Spots - selected Spot - Packagers.</p>
+<p><img alt="Pasted image 20231005171111.png" src="Pasted image 20231005171111.png" class="internal-embed"></p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh3.googleusercontent.com/A_HXM5v8GgCm3ZVjRPAKguOPZOnDHtsvMa8paCn2NJNAH4OzgKDiVo-zQqP_XkHNJS8nc_fpfzyYpdz0_G7EFh-lGBQQpw6fhhHvbCO8fcoFJOxA38AA9XU9lqaEqIS5_x-EdE_tcCtMX8NOxoYg9Hk" referrerpolicy="no-referrer"></td>
+<td>List of Packagers is sorted by creation time in ascending order (by default).</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>Search field - Search Packagers by Name;</li>
+<li>Add new packager - Click tp open a form for Packager Creation.&nbsp;&nbsp;</li>
+<li>Name - Displays the Name of the Packager. Option to sort in ascending/descending order.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Customer - Displays the Customer attached to the Packager.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Path - Displays the Path of the content for the Packager.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Segment duration - Displays the Segment duration of the Packager.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Controls - Tools for performing operations with Packagers.
+<ul>
+<li><img src="https://lh4.googleusercontent.com/SERFMMshwAVwbsFtg3to-E4Pi3VCbO82WnebN3iB-k-Uh8qeRDYqAL_5TVOLIwPg7GdWIJy48WNHpcgAj0K8k6VWBusS89EvNYlpI3Uwsnu_O8Gk4mHhvt6zV39obrg0AwZG76L5FuDioReSee7TRHI" referrerpolicy="no-referrer"> - Click to Delete the packager.</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="1.2.6 Features">1.2.6 Features</h3>
+<p>Path: Spots - Selected Spot - Features</p>
+<h4 data-heading="1.2.6.1 List of Features">1.2.6.1 List of Features</h4>
+<p><img alt="Pasted image 20231005173308.png" src="Pasted image 20231005173308.png" class="internal-embed"></p>
+<ul>
+<li>Search field - Search Feature by name.</li>
+<li>Feature name - Displays the Name of the Feature.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+<li>Value - Displays the specified Value of the Feature
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+<li><img alt="Pasted image 20231005192626.png" src="Pasted image 20231005192626.png" class="internal-embed"> - Click to open a form for specifying the Value of the Feature.<br>
+<img alt="Pasted image 20231005192741.png" src="Pasted image 20231005192741.png" class="internal-embed">
+<ul>
+<li>Current Value - Displays current Value of the Feature.</li>
+<li>New Value - Type new Value for the Feature.</li>
+<li>Save - Click to Update changes.</li>
+<li><img alt="Pasted image 20231005192845.png" src="Pasted image 20231005192845.png" class="internal-embed"> - Click to close the form.</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Description - Displays the Description of the feature, available values and other types of feature information.
+<ul>
+<li><img alt="Pasted image 20231005171519.png" src="Pasted image 20231005171519.png" class="internal-embed"> - Click to sort in ascending/descending order.</li>
+</ul>
+</li>
+</ul>
+<h4 data-heading="1.2.6.2 Spot Features">1.2.6.2 Spot Features</h4>
+<ul>
+<li>Log Level - Sets minimum log level to be displayed.<br>
+Available values:
+<ul>
+<li>trace</li>
+<li>debug</li>
+<li>info</li>
+<li>warn</li>
+<li>error</li>
+</ul>
+</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><img src="https://lh5.googleusercontent.com/U5zDZW1x7PWVAsZdYWkwdglI0pDEzazmz1qqOHn3PFdAZebGowaMYE-N5nG2qGRMZOXfJgVbtPGRTHcZKTTTie28PTmcwjmXo_V9siDh2bi-f0KdTagRw8Md8pctHyto5WANcp7iaWXrpAiedTlIAU0" referrerpolicy="no-referrer"></td>
+<td>Minimum Log Level imposes restrictions on the list of Log Levels in the Logs section of a Spot. &nbsp;</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>PurgeIntervalMin - Set the frequency of checking file statistic and deleting expired files.</li>
+<li>CachePoolOnInsert - Set whether to cache a pool when creating it.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>DistributedCacheLiveTimeMin - Set the memcached expiration time in minutes.</li>
+<li>ReserveWatcherIntervalMin - Set the time between reading data for reserve watcher.</li>
+<li>DefaultNoDVRDurationMin - Set expiration time for no DVR.</li>
+<li>LogFileOperationTime - Set whether to log time for cache and disk operations<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>GcPercent - Set the garbage collection target percentage.<br>
+Available values:
+<ul>
+<li>0-100%</li>
+</ul>
+</li>
+<li>WriteBufSize - Set the buffer size for file write operation (0 - adjust to file size).</li>
+<li>AsyncArchiveEnabled - Set whether to perform archiving asynchronously. Changes will take effect after the restart.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>KeepNoDvrOnDisk - Set whether to store no DVR content on disk.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>DvrStrategy - Set the strategy for selecting DVR profiles.<br>
+Available values:
+<ul>
+<li>MaxBitrate</li>
+<li>Masks</li>
+</ul>
+</li>
+<li>BunchSize - Set the bunchsize in megabytes.</li>
+<li>DVR preload - Set whether to precache DVR stream.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Log export - Set whether to export logs to Clickhouse.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>VOD cache time - Set the cache TTL for VODs.</li>
+<li>Spot live stat shift - Set the shift for spot live stat. Use it if CH doesn't have enough time to write statistics.</li>
+<li>Bunch O_SYNC - Set whether to open bunch files with O_SYNC flag. It doesn't affect already opened bunch files.</li>
+<li>Bunch sync call - Set whether to call os.File.Sync() after writing to a bunch.<br>
+Available values:
+<ul>
+<li>Negative value - Sets Bunch sync call OFF;</li>
+<li>0 - Call after each write,</li>
+<li>Positive value - Sets the minimum interval between calls.</li>
+</ul>
+</li>
+<li>File O_SYNC - Set whether to open files with O_SYNC flag.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Purge goroutines - Set the number of purge goroutines.</li>
+<li>Find purge enabled - Set whether to use find command for purging.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Purge entire directory - Set whether to try deleting entire directories with expired chunks.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Ts files parser version - Set the Ts files parser version.<br>
+Available values:
+<ul>
+<li>1 - astits</li>
+<li>2 - comcast</li>
+</ul>
+</li>
+<li>Only cached retry duration - Set the retry duration in milliseconds for reading cached only content.</li>
+<li>Cache not found response - Set whether to display if cache was not found.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Use RO memcached instance - Set whether to use alternate memcached instance for GET operations.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Local cache TTL - Set the time for Local cache storing.</li>
+<li>Forward request ID - Set whether to forward request ID to clients.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Forward request ID on redirect - Set whether to forward request ID on redirect.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+<li>Precache origin response - Set &nbsp;whether to precache origin stream.<br>
+Available values:
+<ul>
+<li>true</li>
+<li>false</li>
+</ul>
+</li>
+</ul>
+<h3 data-heading="1.2.7 API Access">1.2.7 API Access</h3>
+<p>Overview: Displays API access settings.<br>
+Path: Spots - Selected Spot - API access</p>
+<p><img alt="Pasted image 20231006134358.png" src="Pasted image 20231006134358.png" class="internal-embed"></p>
+<ul>
+<li>Create new Key - Click to open a form for the new API Key creation.
+<ul>
+<li>Name - Type the Name for the API User.</li>
+<li>Customer - Select the Customer to attach to the API User.</li>
+</ul>
+</li>
+<li>Name - Displays the Name of the API Key.</li>
+<li>Customer - Displays the Customer attached to the API Key.</li>
+<li>Key - Displays the API Key in protected form (displays only 5 last characters, others are hidden by symbols "*")</li>
+<li>Created on - Displays the date and time of the API Key creation;</li>
+<li>Created by - Displays the user, who created the API Key;</li>
+<li>Last activity - Displays the date and time of API User last activity;</li>
+<li>Status - Switch ON/OFF to enable/disable the API User.</li>
+<li>Action - Tools to perform operations with API Keys (API Users).
+<ul>
+<li><img src="https://lh4.googleusercontent.com/xE5BkoYd-GButceF0Q8Otn-r9PbH9z0YvNF1brX_oWOGkS_qoIFL-0exVa3ynAVb356R-3Ejgva9i9Cd_Ni99hEJcdG1ioVdfvPX7mrkxJMt6lMQZggypdHi2eCiE_RS6J3u9MUpGZS3QBo867fBQfE" referrerpolicy="no-referrer"> - Click to copy the Access key to clipboard.&nbsp;</li>
+</ul>
+</li>
+</ul>
+<h2 data-heading="2. Users">2. Users</h2>
+<p>Overview: It is intended for creating and managing Users, who are working directly in the Streampool.</p>
+<h3 data-heading="2.1. User Details">2.1. User Details</h3>
+<p>Path: Users - Add new user/ Edit selected user</p>
+<p><img src="https://lh6.googleusercontent.com/Pw7ISWiP_EP_ygFjdpBvtVluFvIzwYd90LAizNjnmJcmFE0qvb-Ux-tEWVhBCt_EjwpoTSoI9pgIcqsiII7AJ81uVOYLFsRIxJUBHkAHFpULdpYUucyQKwLjCZSCoj9APl4g_viMS_P7ClMEIAAyzhk" referrerpolicy="no-referrer"><br>
+Picture 2.1 - Add new user</p>
+<p>User Details:</p>
+<ul>
+<li>
+<p>Name - User’s name;<br>
+</p>
+</li>
+<li>
+<p>Email - User’s email, which will be used for authorization in the Streampool.<br>
+</p>
+</li>
+<li>
+<p>Password - User’s password, which will be used for authorization in the Streampool.<br>
+</p>
+</li>
+<li>
+<p>Role - User’s role. Available values:</p>
+</li>
+<li>
+<p>Admin - user, who has access to create, view, update and delete entities.<br>
+</p>
+</li>
+<li>
+<p>User - user, who has access to view data.</p>
+</li>
+<li>
+<p>Create user/ Save button - creates a new user/saves changes.<br>
+</p>
+</li>
+<li>
+<p>Delete <img src="https://lh4.googleusercontent.com/aWxlUVY2MmN9g16DfIF-FMS1dooJ0n3fvplVc-rtnLxUcP_Q5ys7UhitbBEJ46xaJXkDX53AcybyKp-pnqLOny7875OGJv4-Auh3yaWww_aw5msN2Sa6C1jhjEJvazH1tvqqcVQsTUHPQt28b9c0hXg" referrerpolicy="no-referrer"> button - deletes the user.<br>
+</p>
+</li>
+<li>
+<p>Back - the button, which returns to List of Users.<br>
+</p>
+</li>
+</ul>
+<h3 data-heading="2.2. List of Users">2.2. List of Users</h3>
+<p>Path: Users</p>
+<p><img src="https://lh6.googleusercontent.com/dYGeBj9BjyMCwEHGIhOV1Uq2jfop8eQRspVUsdnREH0nce7mEbduM9RUQYvHFnprHB-gdocN_5uHeQ4CWgMkqA68p34yF6iL3rJaEQe30pX43yxGBGzrgqFoXWUMrRu1KF0Y6oYrbCmWhM6baDa386k" referrerpolicy="no-referrer"></p>
+<p>Picture 2.2 - List of Users</p>
+<p>List of Users is sorted by Name in ascending order (by default):</p>
+<ul>
+<li>
+<p>Add new user - opens the User creation form.<br>
+</p>
+</li>
+<li>
+<p>Search field - Search User by User name.<br>
+</p>
+</li>
+<li>
+<p>User name - displays User’s name. Option to sort in ascending/descending order.<br>
+</p>
+</li>
+<li>
+<p>Role - displays User’s role.&nbsp; Option to sort in ascending/descending order.<br>
+</p>
+</li>
+<li>
+<p>Controls - allowed user operations:</p>
+</li>
+<li>
+<p><img src="https://lh4.googleusercontent.com/FAa_irJrTCyBwiEyBrIcMZC229RxGQjrdJSsIeCtHm_ZDV4hfx45k8Ep1YFMRu5wzkAKc-t9q2a2SEvvylKEJpIRqo-iEJGT4PgzMrQxT3pH1BH9GJtjmwDZsWEmwTqdQi51vDim-7kU6i70zfwUWK8" referrerpolicy="no-referrer"> - deletes User.<br>
+</p>
+</li>
+</ul>
+<p>**</p>
+    </body>
+</html>

@@ -1,0 +1,238 @@
+{
+  "main": {
+    "id": "d1cb6f73c5de48cf",
+    "type": "split",
+    "children": [
+      {
+        "id": "3ce5e1f3fe12d764",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "05695e7e624f15f9",
+            "type": "leaf",
+            "state": {
+              "type": "graph",
+              "state": {}
+            }
+          },
+          {
+            "id": "b77c623fb6551bc1",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Content category.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d47a077ed06c9db3",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Organization.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "2183e7bda8531d9d",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Content category.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ca9edb2d98e16f51",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Content sub-category.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ac49f06ab7bf951a",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Streaming URL Policy.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "f90d3c63e7e36ece",
+    "type": "split",
+    "children": [
+      {
+        "id": "b7ee1c26713d7269",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "055f2a67147be762",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "5f46ef480d2012fb",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "#pd-1099",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "f48f7ec69a2fd1f6",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 1
+      }
+    ],
+    "direction": "horizontal",
+    "width": 286.5
+  },
+  "right": {
+    "id": "77258c79f68bc44b",
+    "type": "split",
+    "children": [
+      {
+        "id": "f0444b0a78c3ae67",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "52a1bcb4f5bf3ff3",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Content category.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f30212fda7170e7f",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Content category.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "b7a0b33c6eb308e1",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "432913595d9ec13d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Content category.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "webpage-html-export:Export Vault to HTML": false
+    }
+  },
+  "active": "b77c623fb6551bc1",
+  "lastOpenFiles": [
+    "Content category.md",
+    "Organization.md",
+    "Content item.md",
+    "Untitled.canvas",
+    "Untitled 1.canvas",
+    "Content sub-category.md",
+    "Streaming URL Policy.md",
+    "Geo Blocking Policy.md",
+    "Content Item.md",
+    "Content Sets.md",
+    "Subscription.md",
+    "Pasted image 20240206104625.png",
+    "2023-10-03.md",
+    "2024-01-30.md",
+    "Pasted image 20240206104114.png",
+    "Untitled 1.md",
+    "User Guide.md",
+    "DASH.md",
+    "Pasted image 20240206103152.png",
+    "Pasted image 20231120195111.png",
+    "Pasted image 20231010135616.png",
+    "Pasted image 20231010135424.png",
+    "Pasted image 20231010135321.png",
+    "Pasted image 20231010134948.png",
+    "Pasted image 20231010134839.png",
+    "Pasted image 20231010134525.png",
+    "User Guide.html"
+  ]
+}
